@@ -215,8 +215,15 @@ script:
 ```
 arch-pi-master/arch-pi.sh -c my.conf
 ```
+## Changes
+
+* Modified configuration settings in arch-pi.conf
+* Changed the default language and keymap
+* Changed the default hostname of *'pi'* to *'archpi'*
+* Configured default IP addresses
 
 ## License
 
 This software is distributed under the terms of the
 [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
