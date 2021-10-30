@@ -46,7 +46,7 @@ In a Terminal download and unpack the latest version of
 `arch-pi`:
 
 ```
-curl -L https://github.com/wrzlbrmft/arch-pi/archive/master.tar.gz | tar zxvf -
+$ curl -L https://github.com/wrzlbrmft/arch-pi/archive/master.tar.gz | tar zxvf -
 ```
 
 Insert the SD card on which you want to install Arch Linux, but make sure none
@@ -55,7 +55,7 @@ determine the device name of the SD card, e.g. `/dev/mmcblk0`, and open the
 configuration file:
 
 ```
-vi arch-pi-master/arch-pi.conf
+$ vi arch-pi-master/arch-pi.conf
 ```
 
 Make sure the `INSTALL_DEVICE` setting matches the device name of your SD card.
@@ -76,7 +76,7 @@ needs super-user privileges. So `su` to `root` or use `sudo` to start the
 installation process:
 
 ```
-sudo arch-pi-master/arch-pi.sh
+$ sudo arch-pi-master/arch-pi.sh
 ```
 
 **CAUTION:** The installation will delete *all* existing data on the SD card.
@@ -104,14 +104,14 @@ keyring and populate the Arch Linux ARM package signing keys.
 Login as `root` and type in:
 
 ```
-pacman-key --init && pacman-key --populate archlinuxarm
+$ pacman-key --init && pacman-key --populate archlinuxarm
 ```
 
 After Pacman is initialized, it's probably a good idea to check for available
 package updates:
 
 ```
-pacman -Syyu
+$ pacman -Syyu
 ```
 
 That's it!
@@ -131,33 +131,33 @@ Before you can install Yay or Yaourt, you first have to set up a build
 environment, so login as `root` (password is `root`) and type in:
 
 ```
-pacman -Syy --noconfirm --needed base-devel sudo
+$ pacman -Syy --noconfirm --needed base-devel sudo
 ```
 
 Next, configure `sudo`, allowing members of the group `wheel` to use it by
 editing the `sudoers` file:
 
 ```
-nano -w /etc/sudoers
+$ nano -w /etc/sudoers
 ```
 
 Remove the leading `#` from the following line to uncomment it:
 
 ```
-%wheel ALL=(ALL) ALL
+# %wheel ALL=(ALL) ALL
 ```
 
 Save the `sudoers` file by pressing `Ctrl-X`, `y`, `Enter` and then logout:
 
 ```
-logout
+$ logout
 ```
 
 Login again, but this time as the user `alarm` (password is `alarm`), and change
 to the directory containing the Yaourt packages:
 
 ```
-cd /home/alarm/software/aaa.dist
+$ cd /home/alarm/software/aaa.dist
 ```
 
 **NOTE:** The Yay and Yaourt packages are in `/home/alarm/software/aaa.dist`
@@ -166,27 +166,27 @@ unless you changed the `YAY_PATH` or `YAOURT_PATH` settings.
 To install Yay:
 
 ```
-tar xvf yay.tar.gz
-cd yay
-makepkg -i -s --noconfirm --needed
+$ tar xvf yay.tar.gz
+$ cd yay
+$ makepkg -i -s --noconfirm --needed
 
-cd ..
+$ cd ..
 ```
 
 To install Yaourt:
 
 ```
-tar xvf package-query.tar.gz
-cd package-query
-makepkg -i -s --noconfirm --needed
+$ tar xvf package-query.tar.gz
+$ cd package-query
+$ makepkg -i -s --noconfirm --needed
 
-cd ..
+$ cd ..
 
-tar xvf yaourt.tar.gz
-cd yaourt
-makepkg -i -s --noconfirm --needed
+$ tar xvf yaourt.tar.gz
+$ cd yaourt
+$ makepkg -i -s --noconfirm --needed
 
-cd ..
+$ cd ..
 ```
 
 After Yay or Yaourt is installed, you can check for available package updates:
@@ -194,13 +194,13 @@ After Yay or Yaourt is installed, you can check for available package updates:
 Using Yay:
 
 ```
-yay -Syyu
+$ yay -Syyu
 ```
 
 Using Yaourt:
 
 ```
-yaourt -Syyua
+$ yaourt -Syyua
 ```
 
 If there are, just follow the instructions on the screen.
@@ -213,7 +213,7 @@ You can use an alternative configuration file by passing it to the installation
 script:
 
 ```
-arch-pi-master/arch-pi.sh -c my.conf
+$ arch-pi-master/arch-pi.sh -c my.conf
 ```
 ## Changes
 
@@ -226,4 +226,3 @@ arch-pi-master/arch-pi.sh -c my.conf
 
 This software is distributed under the terms of the
 [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
-
