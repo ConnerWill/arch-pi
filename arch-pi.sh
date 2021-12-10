@@ -548,37 +548,23 @@ doUnmount() {
 # =================================================================================
 
 doCheckRootPrivileges
-
 doCheckInstallDevice
-
 doSelectHardwareModel
-
 doConfirmInstall
-
 doDownloadArchLinux
-
 doWipeAllPartitions
 doWipeDevice
-
 doCreateNewPartitionTable "$PARTITION_TABLE_TYPE"
-
 doCreateNewPartitions
 doDetectDevices
-
 doFormat
 doMount
-
 doUnpackArchLinux
-
 doFinalizeBoot
-
 doSetHostname "$HOSTNAME"
 doSetTimezone "$TIMEZONE"
-
 doSetConsole "$CONSOLE_KEYMAP" "$CONSOLE_FONT"
-
 doFixLinkIsNotReady
-
 doClearNetwork
 
 if [ "$SET_ETHERNET" == "yes" ]; then
@@ -600,26 +586,16 @@ if [ "$SET_WIRELESS" == "yes" ]; then
 fi
 
 [ "$DISABLE_IPV6" == "yes" ] && doDisableIpv6
-
 [ "$ROOT_USER_BASH_LOGOUT_CLEAR" == "yes" ] && doBashLogoutClear
-
 [ "$SSH_ACCEPT_KEY_TYPE_SSH_DSS" == "yes" ] && doSshAcceptKeyTypeSshDss
-
 [ "$DOWNLOAD_YAY" == "yes" ] && doDownloadYay
-
 [ "$DOWNLOAD_YAOURT" == "yes" ] && doDownloadYaourt
-
 [ "$SYMLINK_HASH_COMMANDS" == "yes" ] && doSymlinkHashCommands
-
 [ "$OPTIMIZE_SWAPPINESS" == "yes" ] && doOptimizeSwappiness
-
 [ ! -z "$DOWNLOAD_PACKAGE_SETS" ] && doDownloadPackageSets
 
 doPrint "Flushing - this might take a while..."
 doFlush
-
 doUnmount
-
 doPrint "Wake up, Neo... The installation is done!"
-
 exit 0
