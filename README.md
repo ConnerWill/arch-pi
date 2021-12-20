@@ -42,23 +42,22 @@ available:
 
 ## Usage Guide
 
-In a Terminal download and unpack the latest version of
-`arch-pi`:
+Clone this repository 
 
 ```
-$ curl -L https://github.com/wrzlbrmft/arch-pi/archive/master.tar.gz | tar zxvf -
+$  git clone https://github.com/ConnerWill/arch-pi.git
 ```
 
-Insert the SD card on which you want to install Arch Linux, but make sure none
-of its partitions is mounted, otherwise unmount them. Then use `lsblk` to
-determine the device name of the SD card, e.g. `/dev/mmcblk0`, and open the
-configuration file:
+Insert the SD card/USB which you want to install Arch Linux on, but make sure none
+of its partitions are mounted, otherwise unmount them. 
+Use the command `lsblk` to determine the device name, e.g. `/dev/mmcblk0`. 
+Then open the configuration file in a text editor.
 
 ```
-$ vi arch-pi-master/arch-pi.conf
+$ $EDITOR arch-pi-master/arch-pi.conf
 ```
 
-Make sure the `INSTALL_DEVICE` setting matches the device name of your SD card.
+Make sure the `INSTALL_DEVICE` setting matches the device name of the device you wish to use.
 
 You may also want to change the following settings:
 
