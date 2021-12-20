@@ -1,11 +1,7 @@
 # arch-pi
-A simple script installing [Arch Linux](https://www.archlinux.org/) on an SD
-card for the
-[Raspberry Pi](https://www.raspberrypi.org/products/).
+A simple script installing [Arch Linux](https://www.archlinux.org/) on the [Raspberry Pi](https://www.raspberrypi.org/products/).
 
 ![arch-pi-image](arch-pi.png)
-
-
 
 The script supports the following hardware models of the
 Raspberry Pi:
