@@ -103,11 +103,57 @@ Make sure the `INSTALL_DEVICE` setting matches the device name of the device you
 
 You may also want to change the following settings:
 
-* `HOSTNAME`
-* `TIMEZONE`
-* `CONSOLE_KEYMAP`
-* `SET_ETHERNET` -- if set to `YES`, then also check the other `ETHERNET_*` settings
-* `SET_WIRELESS` -- if set to `YES`, then also check the other `WIRELESS_*` settings
+## Configuration
+### Configuration Variables
+
+**BackupDir**
+: Root folder from where to start the backup. All subfolders will be backed up ***[string]***
+
+**ExcludeList**
+: List of folders to not backup ***[string]***
+*(eg. Backups, tmp)*
+
+**ArchiveDir**
+: Location to save the backup ***[string]***
+
+**ArchiveName**
+: Name of the backup ***[string]***
+
+**OpenInQuickLook**
+: After backup has finished, open *'quicklook'* ***[bool]***
+
+
+
+`HOSTNAME`
+: Hostname to set for the RaspberryPi
+
+`TIMEZONE`
+: Local timezone
+
+`CONSOLE_KEYMAP`
+: Prefered keymap
+
+`SET_ETHERNET` If `SET_ETHERNET` is 'yes' then the other ethernet fields are required.
+
+
+
+
+-- if set to `YES`, then also check the other `ETHERNET_*` settings
+: Decide if to use DHCP or configure a static IP.
+:
+
+
+## Ethernet Networking Configuration
+SET_ETHERNET="yes"    # 
+ETHERNET_INTERFACE="eth0"
+ETHERNET_DHCP="no"
+ETHERNET_ADDRESS="192.168.1.10/24"
+ETHERNET_GATEWAY="192.168.1.1"
+ETHERNET_DNS="192.168.1.1"
+
+`SET_WIRELESS` -- if set to `YES`, then also check the other `WIRELESS_*` settings
+:
+
 
 Once you are done, save and close the configuration file.
 
