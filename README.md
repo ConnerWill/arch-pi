@@ -99,49 +99,43 @@ Then open the configuration file in a text editor.
 "$EDITOR" "arch-pi-master/arch-pi.conf"
 ```
 
-Make sure the `INSTALL_DEVICE` setting matches the device name of the device you wish to use.
-
-You may also want to change the following settings:
-
 ## Configuration
 ### Configuration Variables
 
-**BackupDir**
-: Root folder from where to start the backup. All subfolders will be backed up ***[string]***
+---
 
-**ExcludeList**
-: List of folders to not backup ***[string]***
-*(eg. Backups, tmp)*
+**[[[VERY IMPORTANT!]]]**
 
-**ArchiveDir**
-: Location to save the backup ***[string]***
 
-**ArchiveName**
-: Name of the backup ***[string]***
+**MAKE SURE** the `INSTALL_DEVICE` variable matches the device you wish to use. 
 
-**OpenInQuickLook**
-: After backup has finished, open *'quicklook'* ***[bool]***
+**Otherwise, if the wrong device is used, you can lose all of your data on your computer.**
+
+---
+
+
+You may also want to change the following settings:
 
 
 
 `HOSTNAME`
-: Hostname to set for the RaspberryPi
+: Hostname to set for the RaspberryPi  ***[string]***
 
 `TIMEZONE`
-: Local timezone
+: Local timezone ***[timezone]***
 
 `CONSOLE_KEYMAP`
-: Prefered keymap
+: Prefered keymap  ***[keymap]***
 
 `SET_ETHERNET` 
-: Decide if to use DHCP or configure a static IP. If `SET_ETHERNET` is 'yes' then the other 'ethernet' fields are required. *(Same applies for the wireless configuration)*
+: Decide if to use DHCP or configure a static IP. If `SET_ETHERNET` is 'yes' then the other 'ethernet' fields are required. *(Same applies for the wireless configuration)*  ***[yes|no]***
 
 <details>
   <summary>Expand More Network Configuration Settings</summary>
 
 ```INI
 ## Ethernet Networking Configuration
-SET_ETHERNET="yes"    # 
+SET_ETHERNET="yes" 
 ETHERNET_INTERFACE="eth0"
 ETHERNET_DHCP="no"
 ETHERNET_ADDRESS="192.168.1.10/24"
@@ -169,7 +163,9 @@ DISABLE_IPV6="yes"
 </details>
 
 
-The rest of the configuration variables and brief descriptions can be found in [arch-pi.conf](arch-pi.conf).
+*The remainging configuration variables and brief descriptions of them can be found in* **[arch-pi.conf](arch-pi.conf)***.*
+
+**Make sure to review the configuration file before running script.**
 
 ---
 
