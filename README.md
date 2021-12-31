@@ -1,8 +1,14 @@
+<div align="center">
+
+<img width="600" height="500" src="arch-pi.png">
+
+
+
 # arch-pi
-A simple script installing [Arch Linux](https://www.archlinux.org/) on the [Raspberry Pi](https://www.raspberrypi.org/products/).
 
-![arch-pi-image](arch-pi.png)
+### **RaspberryPi Arch Linux Installer**
 
+> A simple script that installs [Arch Linux](https://www.archlinux.org/) on the [Raspberry Pi](https://www.raspberrypi.org/products/).
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/ConnerWill/arch-pi)
 ![GitHub issues](https://img.shields.io/github/issues-raw/ConnerWill/arch-pi)
@@ -10,7 +16,45 @@ A simple script installing [Arch Linux](https://www.archlinux.org/) on the [Rasp
 [![GitLab](https://img.shields.io/static/v1?label=gitlab&logo=gitlab&color=E24329&message=mirrored)](https://gitlab.com/ConnerWill/arch-pi)
 ![GitHub](https://img.shields.io/github/license/ConnerWill/arch-pi)
 ![GitHub Repo stars](https://img.shields.io/github/stars/ConnerWill/arch-pi?style=social)
+  
+---
 
+</div>
+
+<!---
+
+# Features
+
+<details>
+  <summary>Expand Features</summary>
+
+ [✔] Comming Soon ...
+
+ [✔] Script is fully functional ...
+
+ [✔] Just working of documentation ...
+
+ [✔] Comming Soon ...
+  
+ [__] BOTTOM TEXT
+  
+</details>
+
+---
+
+# Table of Contents
+
+<details>
+  <summary>Expand Table of Contents</summary>
+
+* Comming Soon ...
+  
+</details>
+
+--->
+
+
+# How To Use
 
 The script supports the following hardware models of the
 Raspberry Pi:
