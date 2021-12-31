@@ -133,16 +133,13 @@ You may also want to change the following settings:
 `CONSOLE_KEYMAP`
 : Prefered keymap
 
-`SET_ETHERNET` If `SET_ETHERNET` is 'yes' then the other ethernet fields are required.
+`SET_ETHERNET` 
+: Decide if to use DHCP or configure a static IP. If `SET_ETHERNET` is 'yes' then the other 'ethernet' fields are required. *(Same applies for the wireless configuration)*
 
+<details>
+  <summary>Expand More Network Configuration Settings</summary>
 
-
-
--- if set to `YES`, then also check the other `ETHERNET_*` settings
-: Decide if to use DHCP or configure a static IP.
-:
-
-
+```INI
 ## Ethernet Networking Configuration
 SET_ETHERNET="yes"    # 
 ETHERNET_INTERFACE="eth0"
@@ -150,9 +147,31 @@ ETHERNET_DHCP="no"
 ETHERNET_ADDRESS="192.168.1.10/24"
 ETHERNET_GATEWAY="192.168.1.1"
 ETHERNET_DNS="192.168.1.1"
+  
+# If 'SET_WIRELESS' is 'yes' then the other wireless variables are required.
+SET_WIRELESS="no"
+WIRELESS_INTERFACE="wlan0"
+WIRELESS_DHCP="no"
+WIRELESS_ADDRESS="192.168.1.11/24"
+WIRELESS_GATEWAY="192.168.1.1"
+WIRELESS_DNS="192.168.1.1"
+WIRELESS_SECURITY="wpa" # obsolete now - we support wpa(2) only
+WIRELESS_ESSID=""
+WIRELESS_KEY=""
+WIRELESS_HIDDEN="no"
+WIRELESS_COUNTRY="US"
 
-`SET_WIRELESS` -- if set to `YES`, then also check the other `WIRELESS_*` settings
-:
+### Disable IPv6
+DISABLE_IPV6="yes"  
+  
+```
+
+</details>
+
+
+The rest of the configuration variables and brief descriptions can be found in [arch-pi.conf](arch-pi.conf).
+
+---
 
 
 Once you are done, save and close the configuration file.
