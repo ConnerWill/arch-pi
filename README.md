@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="600" height="500" src="arch-pi.png">
+<img width="800" height="650" src="arch-pi.png">
 
 
 
@@ -59,13 +59,13 @@
 The script supports the following hardware models of the
 Raspberry Pi:
 
-* Raspberry Pi Model A/A+/B/B+, Compute Module, Zero, Zero W (ARMv6)
+* Raspberry Pi Model A/A+/B/B+, Compute Module, Zero, Zero W 8(ARMv6)
 * Raspberry Pi 2 Model B (ARMv7)
 * Raspberry Pi 3 Model B/B+ (ARMv8, but using ARMv7)
 * Raspberry Pi 4 Model B (ARMv8, but using ARMv7)
 
-**NOTE:** For the time being, the Raspberry Pi 3 Model B will install the ARMv7
-version of Arch Linux also used by the Raspberry Pi 2 Model B.
+***NOTE:** For the time being, the Raspberry Pi 3 Model B will install the ARMv7
+version of Arch Linux also used by the Raspberry Pi 2 Model B.*
 
 The installation procedure pretty much matches the Installation Guides from
 [Arch Linux ARM](http://archlinuxarm.org/),
