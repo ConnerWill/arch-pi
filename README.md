@@ -65,39 +65,29 @@ After the installation, you can directly login to your arch-pi using the pre-con
 
 ## Requirements
 
-In order to use
-`arch-pi`,
-you need an extra Linux environment (Mac support not quite there...) which is
-connected to the Internet and has an SD card slot.
+To setup a RaspberryPi running Arch Linux, **arch-pi** requires a Linux environment that has internet access and has a SD card slot / reader *(Mac support is not yet implemented ...)*. 
 
-For the Linux environment, you can also use a Live-CD like
-[Xubuntu](http://xubuntu.org/). Just make sure the following commands are
-available:
+If you do not have a Linux environment, you could temporarily boot a Live-CD Linux distribution like [Xubuntu](http://xubuntu.org/).
 
-* `lsblk`
-* `dd`
-* `parted`
-* `curl`
-* `tar`
+Just be sure the following commands are available:
+
+> `lsblk` `dd` `parted` `curl` `tar`
 
 The script supports the following hardware models of the
 Raspberry Pi:
-
-* Raspberry Pi Model A/A+/B/B+, Compute Module, Zero, Zero W *(ARMv6)*
-* Raspberry Pi 2 Model B *(ARMv7)*
-* Raspberry Pi 3 Model B/B+ *(ARMv8, but using ARMv7)*
-* Raspberry Pi 4 Model B *(ARMv8, but using ARMv7)*
+> * Raspberry Pi Model A/A+/B/B+, Compute Module, Zero, Zero W *(ARMv6)*
+> * Raspberry Pi 2 Model B *(ARMv7)*
+> * Raspberry Pi 3 Model B/B+ *(ARMv8, but using ARMv7)*
+> * Raspberry Pi 4 Model B *(ARMv8, but using ARMv7)*
 
 ***NOTE:** For the time being, the Raspberry Pi 3 Model B will install the ARMv7
 version of Arch Linux also used by the Raspberry Pi 2 Model B.*
-
-
 ## Usage Guide
 
 Clone this repository 
 
-```
-$  git clone https://github.com/ConnerWill/arch-pi.git
+```Bash
+ git clone https://github.com/ConnerWill/arch-pi.git
 ```
 
 Insert the SD card/USB which you want to install Arch Linux on, but make sure none
@@ -105,8 +95,8 @@ of its partitions are mounted, otherwise unmount them.
 Use the command `lsblk` to determine the device name, e.g. `/dev/mmcblk0`. 
 Then open the configuration file in a text editor.
 
-```
-$ $EDITOR arch-pi-master/arch-pi.conf
+```Bash
+"$EDITOR" "arch-pi-master/arch-pi.conf"
 ```
 
 Make sure the `INSTALL_DEVICE` setting matches the device name of the device you wish to use.
@@ -126,8 +116,8 @@ To write and format partitions on the SD card,
 needs super-user privileges. So `su` to `root` or use `sudo` to start the
 installation process:
 
-```
-$ sudo arch-pi-master/arch-pi.sh
+```Bash
+sudo arch-pi-master/arch-pi.sh
 ```
 
 **CAUTION:** The installation will delete *all* existing data on the SD card.
@@ -154,15 +144,15 @@ keyring and populate the Arch Linux ARM package signing keys.
 
 Login as `root` and type in:
 
-```
-$ pacman-key --init && pacman-key --populate archlinuxarm
+```Bash
+pacman-key --init && pacman-key --populate archlinuxarm
 ```
 
 After Pacman is initialized, it's probably a good idea to check for available
 package updates:
 
-```
-$ pacman -Syyu
+```Bash
+pacman -Syyu
 ```
 
 That's it!
@@ -181,34 +171,34 @@ packages from the [AUR](https://aur.archlinux.org/).
 Before you can install Yay or Yaourt, you first have to set up a build
 environment, so login as `root` (password is `root`) and type in:
 
-```
-$ pacman -Syy --noconfirm --needed base-devel sudo
+```Bash
+pacman -Syy --noconfirm --needed base-devel sudo
 ```
 
 Next, configure `sudo`, allowing members of the group `wheel` to use it by
 editing the `sudoers` file:
 
-```
-$ nano -w /etc/sudoers
+```Bash
+nano -w /etc/sudoers
 ```
 
 Remove the leading `#` from the following line to uncomment it:
 
-```
+```Bash
 # %wheel ALL=(ALL) ALL
 ```
 
 Save the `sudoers` file by pressing `Ctrl-X`, `y`, `Enter` and then logout:
 
-```
-$ logout
+```Bash
+logout
 ```
 
 Login again, but this time as the user `alarm` (password is `alarm`), and change
 to the directory containing the Yaourt packages:
 
-```
-$ cd /home/alarm/software/aaa.dist
+```Bash
+cd /home/alarm/software/aaa.dist
 ```
 
 **NOTE:** The Yay and Yaourt packages are in `/home/alarm/software/aaa.dist`
@@ -216,42 +206,42 @@ unless you changed the `YAY_PATH` or `YAOURT_PATH` settings.
 
 To install Yay:
 
-```
-$ tar xvf yay.tar.gz
-$ cd yay
-$ makepkg -i -s --noconfirm --needed
+```Bash
+tar xvf yay.tar.gz
+cd yay
+makepkg -i -s --noconfirm --needed
 
-$ cd ..
+cd ..
 ```
 
 To install Yaourt:
 
-```
-$ tar xvf package-query.tar.gz
-$ cd package-query
-$ makepkg -i -s --noconfirm --needed
+```Bash
+tar xvf package-query.tar.gz
+cd package-query
+makepkg -i -s --noconfirm --needed
 
-$ cd ..
+cd ..
 
-$ tar xvf yaourt.tar.gz
-$ cd yaourt
-$ makepkg -i -s --noconfirm --needed
+tar xvf yaourt.tar.gz
+cd yaourt
+makepkg -i -s --noconfirm --needed
 
-$ cd ..
+cd ..
 ```
 
 After Yay or Yaourt is installed, you can check for available package updates:
 
 Using Yay:
 
-```
-$ yay -Syyu
+```Bash
+yay -Syyu
 ```
 
 Using Yaourt:
 
-```
-$ yaourt -Syyua
+```Bash
+yaourt -Syyua
 ```
 
 If there are, just follow the instructions on the screen.
@@ -263,15 +253,9 @@ That's it!
 You can use an alternative configuration file by passing it to the installation
 script:
 
+```Bash
+arch-pi-master/arch-pi.sh -c my.conf
 ```
-$ arch-pi-master/arch-pi.sh -c my.conf
-```
-## Changes
-
-* Modified configuration settings in arch-pi.conf
-* Changed the default language and keymap
-* Changed the default hostname of *'pi'* to *'archpi'*
-* Configured default IP addresses
 
 ## License
 
