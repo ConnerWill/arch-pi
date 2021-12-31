@@ -3,6 +3,15 @@ A simple script installing [Arch Linux](https://www.archlinux.org/) on the [Rasp
 
 ![arch-pi-image](arch-pi.png)
 
+
+![GitHub last commit](https://img.shields.io/github/last-commit/ConnerWill/arch-pi)
+![GitHub issues](https://img.shields.io/github/issues-raw/ConnerWill/arch-pi)
+![GitHub repo size](https://img.shields.io/github/repo-size/ConnerWill/arch-pi)
+[![GitLab](https://img.shields.io/static/v1?label=gitlab&logo=gitlab&color=E24329&message=mirrored)](https://gitlab.com/ConnerWill/arch-pi)
+![GitHub](https://img.shields.io/github/license/ConnerWill/arch-pi)
+![GitHub Repo stars](https://img.shields.io/github/stars/ConnerWill/arch-pi?style=social)
+
+
 The script supports the following hardware models of the
 Raspberry Pi:
 
