@@ -4,7 +4,7 @@
 
 
 
-# arch-pi
+# ａｒｃｈ－ｐｉ
 
 ### **RaspberryPi Arch Linux Installer**
 
