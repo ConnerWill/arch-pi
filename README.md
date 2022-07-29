@@ -21,6 +21,9 @@
 
 </div>
 
+> An easier method to generate ArchLinux Raspberry Pi images is available at [ConnerWill/Packer-Builder-ARM](https://github.com/ConnerWill/packer-builder-arm)
+
+
 <!---
 
 # Features
